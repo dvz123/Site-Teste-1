@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Feedback</title>
+</head>
+<body>
+
+    <header>
+        <h1>Dvz Experience</h1>
+    </header>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="tabela.html">Tabela de produtos</a>
+    </nav>
+
+    <div class="container">
+        <h1>Formulário de Feedback</h1>
+        <form id="falsofeedback" action="fake.feedback" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            
+            <input type="submit" value="Enviar">
+        </form>
+
+        <p id="mensagemdofalsofeedback" style="display: none;">Estamos muito felizes com o seu feedback! Nossa recompensa é ver clientes satisfeitos como você. Obrigado!</p>
+
+    </div>
+
+    <script>
+       
+        document.getElementById("falsofeedback").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+            document.getElementById("nome").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("mensagem").value = "";
+
+            document.getElementById("mensagemdofalsofeedback").style.display = "block";
+        });
+    </script>
+<br>
+<br>
+<br>
+    <footer>
+        <p>&copy; 2024 DvzExperience.com</p>
+
+    </footer>
+
+
+</body>
+</html>
